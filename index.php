@@ -40,20 +40,38 @@ for ($i = 0; $i < $password_length; $i++) {
 </head>
 
 <body>
-    <div class="container">
-        <!-- Form -->
-        <form method="GET" class="mt-5">
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Lunghezza password:</label>
-                <input type="number" class="form-control" name="length">
+    <main class="bg-primary vh-100 d-flex align-items-center justify-content-center">
+        <div class="container text-white">
+            <h1 class="fw-bold text-secondary text-center m-0 pb-5">
+                PHP Strong Password Generator
+            </h1>
+
+            <!-- Form -->
+            <div class="d-flex align-items-center justify-content-center pb-5">
+                <div class="d-flex align-items-center justify-content-center">
+                    <form method="GET">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label text-white fw-bold">Enter the password length:</label>
+                            <input type="number" class="form-control" name="length">
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center pt-2">
+                            <button type="submit" class="btn btn-secondary fw-bold text-uppercase">generate</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-        <!-- Password random -->
-        <p class="mt-5">
-            <?php echo $random_password_generated ?>
-        </p>
-    </div>
+
+            <!-- Password random -->
+            <div class="d-flex align-items-center justify-content-center">
+                <div class="box-password">
+                    <h4 class="text-white text-center">Password generated:</h4>
+                    <p class="text-secondary text-center fs-5 m-0">
+                        <?php echo $random_password_generated ?>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 
 </html>

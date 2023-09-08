@@ -1,0 +1,24 @@
+:root {
+    --bs-primary: #0E21A0;
+    --bs-primary-rgb: 14, 33, 160;
+    --bs-secondary: #EC53B0;
+    --bs-secondary-rgb: 236, 83, 176;
+}
+
+.btn-secondary {
+    --bs-btn-bg: var(--bs-secondary);
+    --bs-btn-border-color: var(--bs-secondary);
+    --bs-btn-hover-bg: #ad3a7f;
+    --bs-btn-hover-border-color: #ad3a7f;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #ad3a7f;
+    --bs-btn-active-border-color: #ad3a7f;
+    --bs-btn-disabled-bg: #ad3a7f;
+    --bs-btn-disabled-border-color: #ad3a7f;
+}
+
+.box-password {
+    border: 1px solid #EC53B0;
+    border-radius: 20px;
+    padding: 1rem;
+}
