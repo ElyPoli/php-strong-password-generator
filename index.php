@@ -1,5 +1,21 @@
 <?php
+// Lunghezza password selezionata
+$password_length = $_GET["length"] ?? '0';
 
+// Creo i diversi array separati
+$alphabet_lowercase = range('a', 'z');
+$alphabet_uppercase = range('A', 'Z');
+$number = range(0, 9);
+$symbols = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+', '=', '{', '}', '[', ']', '|', ':', ';', '<', '>', ',', '.', '?', '/'];
+
+// Unisco tutti gli array in uno unico
+$array_character_set = array_merge($alphabet_lowercase, $alphabet_uppercase, $number, $symbols);
+
+// Estraggo casualmente tot elementi dall'array totale
+$random_password_generated = '';
+for ($i = 0; $i < $password_length; $i++) {
+    $random_password_generated .= $array_character_set[rand(0, count($array_character_set) - 1)];
+}
 ?>
 
 <!DOCTYPE html>
@@ -24,6 +40,20 @@
 </head>
 
 <body>
+    <div class="container">
+        <!-- Form -->
+        <form method="GET" class="mt-5">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Lunghezza password:</label>
+                <input type="number" class="form-control" name="length">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <!-- Password random -->
+        <p class="mt-5">
+            <?php echo $random_password_generated ?>
+        </p>
+    </div>
 </body>
 
 </html>
