@@ -1,3 +1,7 @@
+<?php
+include __DIR__ . "/functions.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,18 +30,15 @@
                 PHP Strong Password Generator
             </h1>
 
-            <!-- Form -->
-            <div class="d-flex align-items-center justify-content-center pb-5">
-                <div class="d-flex align-items-center justify-content-center">
-                    <form method="GET" action="password.php">
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label text-white fw-bold">Enter the password length:</label>
-                            <input type="number" class="form-control" name="length">
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center pt-2">
-                            <button type="submit" class="btn btn-secondary fw-bold text-uppercase">generate</button>
-                        </div>
-                    </form>
+            <!-- Password random -->
+            <div class="d-flex align-items-center justify-content-center">
+                <div class="box-password">
+                    <h4 class="text-white text-center">Password generated:</h4>
+                    <p class="text-secondary text-center fs-5 m-0">
+                        <?php
+                        echo (isset($_SESSION['password']) && $_SESSION['password'] !== '') ? $_SESSION['password'] : "errore: password non generata";
+                        ?>
+                    </p>
                 </div>
             </div>
         </div>
