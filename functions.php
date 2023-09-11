@@ -36,12 +36,14 @@ $random_password_generated = '';
 if (!empty($array_character_set)) {
     $array_length = count($array_character_set);
 
-    // Verifico se l'utente ha selezionato o meno la possibilità di avere caratteri ripetuti
-    if ($repeat !== "on") {
-        $used_characters = [];
-    }
+    $used_characters = []; // Creo un array per tenere traccia dei caratteri estratti
 
     for ($i = 0; $i < $password_length; $i++) {
+        // Se tutti i caratteri disponibili sono già stati estratti esco dal ciclo
+        if (count($used_characters) === $array_length) {
+            break;
+        }
+
         $new_value_index = rand(0, $array_length - 1); // Genero un nuovo valore casuale
         $new_value = $array_character_set[$new_value_index];
 
