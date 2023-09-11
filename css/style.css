@@ -18,7 +18,12 @@
 }
 
 .box-password {
-    border: 1px solid #EC53B0;
+    border: 1px solid var(--bs-secondary);
     border-radius: 20px;
     padding: 1rem;
+}
+
+.form-check-input:checked {
+    background-color: var(--bs-secondary);
+    border-color: var(--bs-secondary);
 }

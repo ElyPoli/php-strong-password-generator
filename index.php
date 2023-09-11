@@ -31,10 +31,45 @@
                 <div class="d-flex align-items-center justify-content-center">
                     <form method="GET" action="password.php">
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label text-white fw-bold">Enter the password length:</label>
+                            <label for="exampleInputEmail1" class="form-label text-white fw-bold fs-5">Enter the password length:</label>
                             <input type="number" class="form-control" name="length">
                         </div>
+                        <div class="form-check pe-2">
+                            <input class="form-check-input" type="checkbox" name="repeat">
+                            <label class="form-check-label text-center text-white fw-bold" for="flexCheckChecked">
+                            Allow repetition of the same characters
+                            </label>
+                        </div>
+                        <p class="m-0 pt-3 pb-1 text-center text-white fw-bold fs-5">What characters do you want to include?</p>
                         <div class="d-flex align-items-center justify-content-center pt-2">
+                            <div class="form-check pe-2">
+                                <input class="form-check-input" type="checkbox" name="number">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Numbers
+                                </label>
+                            </div>
+                            <div class="form-check pe-2">
+                                <input class="form-check-input" type="checkbox" name="lowercase">
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    Lowercase letters
+                                </label>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center pt-2 pb-2">
+                            <div class="form-check pe-2">
+                                <input class="form-check-input" type="checkbox" name="uppercase">
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    Uppercase letters
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="symbols">
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    Special symbols
+                                </label>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center pt-4">
                             <button type="submit" class="btn btn-secondary fw-bold text-uppercase">generate</button>
                         </div>
                     </form>
